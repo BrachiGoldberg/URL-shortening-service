@@ -14,7 +14,7 @@ const LinkSchema = mongoose.Schema({
             {
                 date: { type: Date, default: Date.now },
                 ipAddress: { type: String },
-                targetParamValue: { type: Number }
+                targetParamValue: { type: Number, default: 0 }
             }
         ],
         default: []
