@@ -7,7 +7,7 @@ router.get('/:id', LinkController.getLinkById)
 
 router.post('/', LinkController.addNewLink)
 
-// router.put('/:id', LinkController.updateCountsById)
+router.put('/:id', LinkController.updateTargetsToLink)
 
 router.delete('/:id', LinkController.deleteById)
 
