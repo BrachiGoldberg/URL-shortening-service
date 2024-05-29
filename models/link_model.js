@@ -13,10 +13,23 @@ const LinkSchema = mongoose.Schema({
         type: [
             {
                 date: { type: Date, default: Date.now },
-                ipAddress: { type: String }
+                ipAddress: { type: String },
+                targetParamValue: { type: Number }
             }
         ],
         default: []
+    },
+    targetParamName: {
+        type: String,
+        default: "t"
+    },
+    targetValues: {
+        type: [
+            {
+                name: { type: String },
+                value: { type: Number }
+            }
+        ]
     }
 })
 

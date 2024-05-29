@@ -32,12 +32,11 @@ app.get('/:id', async (req, res) => {
     try {
         const myLink = await LinkModel.findById(req.params.id)
         if (!myLink)
-            res.status(400).json({ message: "Not found" })
+            res.status(404).json({ message: "Not found" })
         const ip = req.socket.remoteAddress
         myLink.clicks.push({ date: new Date(), ipAddress: ip })
         myLink.counts++;
-        console.log(myLink)
-debugger
+
         await myLink.save()
         res.redirect(301, myLink.link);
 
