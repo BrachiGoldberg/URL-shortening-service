@@ -9,12 +9,15 @@ const LinkSchema = mongoose.Schema({
         type: Number,
         default: 0
     },
-    clicks: [
-        {
-            date: Date,
-            ipAddress: string
-        }
-    ]
+    clicks: {
+        type: [
+            {
+                date: { type: Date, default: Date.now },
+                ipAddress: { type: String }
+            }
+        ],
+        default: []
+    }
 })
 
 export default mongoose.model('Link', LinkSchema)
